@@ -117,36 +117,6 @@ mod tests {
     use super::List;
 
     #[test]
-    fn basics() {
-        let mut list = List::new();
-
-        // check empty list behaves right
-        assert_eq!(list.pop(), None);
-
-        // populate list
-        list.push(1);
-        list.push(2);
-        list.push(3);
-
-        //check for normal removal
-        assert_eq!(list.pop(), Some(3));
-        assert_eq!(list.pop(), Some(2));
-
-        // push some more to make sure nothing is corrupted
-        list.push(4);
-        list.push(5);
-
-        // check normal removal
-        assert_eq!(list.pop(), Some(5));
-        assert_eq!(list.pop(), Some(4));
-
-        // check exhaustion
-        assert_eq!(list.pop(), Some(1));
-        assert_eq!(list.pop(), None);
-
-    }
-
-    #[test]
     fn peek() {
         let mut list = List::new();
         assert_eq!(list.peek(), None);
